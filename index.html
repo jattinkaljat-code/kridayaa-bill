@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Kridayaa Boutique Billing App</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8B0000">
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="initBill()">
+
+<div class="bill">
+
+  <h2 class="center">KRIDAYAA BOUTIQUE & RENTAL DRESSES</h2>
+  <p class="center">
+    Mob: 9782281935 , 9352140212<br>
+    Address: Shop No 52, Shree Nidhi Vihar, T-Block, Narayan Vihar,<br>
+    Mansarovar, Jaipur – 302020<br>
+    GSTIN: 08BFUPY7358K1Z4
+  </p>
+
+  <hr>
+
+  <div class="top">
+    <div>Bill No: <b id="billNo"></b></div>
+    <div>Date: <b id="billDate"></b></div>
+  </div>
+
+  <h3>Customer Details</h3>
+  <table class="no-border">
+    <tr>
+      <td>Name:</td><td><input></td>
+      <td>Mobile:</td><td><input></td>
+    </tr>
+  </table>
+
+  <h3>Dress Measurement Details</h3>
+
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Dress</th>
+        <th>Length</th>
+        <th>Chest</th>
+        <th>Waist</th>
+        <th>Hip</th>
+        <th>Shoulder</th>
+        <th>Sleeve</th>
+        <th>Front Neck</th>
+        <th>Back Neck</th>
+        <th>Qty</th>
+        <th>Rate</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+
+    <tbody id="dressBody">
+      <tr class="dressRow">
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input></td>
+        <td><input type="number" value="1" class="qty" oninput="calculate()"></td>
+        <td><input type="number" class="rate" oninput="calculate()"></td>
+        <td class="amt">0</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <button onclick="addDress()">➕ Add Dress</button>
+
+  <h3>Payment Details</h3>
+  <table class="no-border">
+    <tr>
+      <td>Total:</td>
+      <td>₹ <span id="total">0</span></td>
+    </tr>
+    <tr>
+      <td>Advance:</td>
+      <td><input type="number" id="advance" oninput="calculate()"></td>
+    </tr>
+    <tr>
+      <td>Balance:</td>
+      <td>₹ <span id="balance">0</span></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table class="no-border">
+    <tr>
+      <td>Customer Signature:</td>
+      <td>__________________________</td>
+      <td>Authorized Signature:</td>
+      <td>__________________________</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <button onclick="window.print()">🖨 Print</button>
+  <button onclick="newBill()">🧾 New Bill</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
